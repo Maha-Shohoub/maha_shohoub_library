@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+<!-- تحسين محركات البحث (SEO) و الظهور في جوجل -->
+    <meta name="description" content="مكتبة مها شهوب الرقمية - منصة مجانية لتحميل وقراءة الكتب التقنية، البرمجة، شبكات الكمبيوتر، والخوارزميات إعداد المهندسة مها شهوب.">
+    <meta name="keywords" content="مكتبة مها شهوب, كتب تقنية, أساسيات البرمجة, كتب شبكات, هياكل بيانات, المهندسة مها شهوب">
+    <meta name="author" content="مها شهوب">
+
+    <!-- وسوم السوشيال ميديا (تظهر عند مشاركة الرابط) -->
+    <meta property="og:title" content="Safari Web | مكتبة مها شهوب">
+    <meta property="og:description" content="منصة القراءة الرقمية للكتب التقنية والبرمجية المجانية.">
+    <meta property="og:image" content="Maha1.png">
+    <meta property="og:url" content="رابط_موقعك_هنا">
+    <meta property="og:type" content="website">
+
+
+    <link rel="icon" type="image/png" href="المها.png">
+    <title>Safari Web | مكتبة مها شهوب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Tajawal', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
+        .library-title { font-family: 'Amiri', serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+        }
+        .book-card { transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; perspective: 1000px; }
+        .book-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-amber-50/30 dark:bg-slate-900 text-gray-900 dark:text-gray-100 antialiased">
+
+    <!-- زر التبديل العائم للوضع الداكن -->
+    <button onclick="toggleDarkMode()" id="theme-toggle" class="fixed bottom-6 right-6 bg-amber-600 dark:bg-amber-500 hover:bg-amber-700 dark:hover:bg-amber-400 text-white dark:text-slate-950 w-12 h-12 rounded-full flex items-center justify-center transition-all z-50 shadow-2xl text-xl">
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <header class="hero-bg h-[45vh] md:h-[55vh] flex flex-col justify-center items-center relative text-white px-4 text-center">
+        <div class="absolute top-6 right-6"><span class="text-xl font-bold tracking-wider text-amber-400">Safari Web</span></div>
+        <div class="bg-black/40 backdrop-blur-md px-8 py-6 rounded-2xl border border-white/10 shadow-2xl flex flex-col items-center">
+            <!-- استبدال أيقونة الكتاب الأصفر باللوجو الخاص بك -->
+            <div class="w-16 h-16 md:w-20 md:h-20 mb-3 rounded-full overflow-hidden border-2 border-amber-400/50 shadow-md bg-white flex items-center justify-center">
+                <img src="Maha1.png" alt="Safari Web Logo" class="w-full h-full object-cover">
+            </div>
+            <h1 class="library-title text-4xl md:text-6xl font-bold tracking-wide">مكتبة مها شهوب</h1>
+            <p class="text-amber-200/80 mt-2 text-sm md:text-base">منصة القراءة الرقمية المتميزة</p>
+        </div>
+    </header>
+
+    <main class="relative max-w-7xl mx-auto px-4 -mt-16 z-10 pb-16">
+        
+        <!-- صف الكتب -->
+        <section class="bg-amber-900/5 dark:bg-slate-800/40 backdrop-blur-md p-4 md:p-8 rounded-2xl shadow-2xl border border-amber-900/10 dark:border-slate-700/50 relative">
+            <h2 class="text-xl font-bold text-amber-900 dark:text-amber-400 mb-4 border-r-4 border-amber-600 pr-3">النسخة الرسمية المعتمدة والمصححة لغويًا</h2>
+            
+            <button onclick="moveSlider('main-shelf', 'right')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-20 shadow-md">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button onclick="moveSlider('main-shelf', 'left')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition-all z-20 shadow-md">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div id="main-shelf" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth py-4 px-2 items-stretch">
+                
+                <!-- كتاب 1 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/اساسيات برمجة.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات برمجة</h3>
+                    <div class="mb-3"><button onclick="readBook('read-1', 'الكتب/أساسيات البرمجة.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-1" class="font-bold">350</span></span></div>
+                </div>
+
+                <!-- كتاب 2 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/أساسيات شبكات.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات شبكات</h3>
+                    <div class="mb-3"><button onclick="readBook('read-2','الكتب/أساسيات شبكات.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-2" class="font-bold">2000</span></span></div>
+                </div>
+
+                <!-- كتاب 3 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/هياكل بيانات وخوارزمية.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">هياكل البيانات</h3>
+                    <div class="mb-3"><button onclick="readBook('read-3','الكتب/هياكل بيانات.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-3" class="font-bold">500</span></span></div>
+                </div>
+
+                <!-- كتاب 4 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/لغة HTML5.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">لغة HTML5</h3>
+                    <div class="mb-3"><button onclick="readBook('read-4', 'الكتب/HTML5  تعلم لغة.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-4" class="font-bold">266</span></span></div>
+                </div>
+
+                <!-- كتاب 5 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/مكونات الحاسب الالي.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">مكونات الحاسب الآلي</h3>
+                    <div class="mb-3"><button onclick="readBook('read-5', 'الكتب/كتاب مكونات الكمبيوتر.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-5" class="font-bold">319</span></span></div>
+                </div>
+
+                <!-- كتاب 6 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/لوحة المفاتيح.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">اختصارات الكمبيوتر</h3>
+                    <div class="mb-3"><button onclick="readBook('read-6', 'الكتب/كتاب تعلم أختصارات لوحة المفاتيح.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-6" class="font-bold">562</span></span></div>
+                </div>
+
+                <!-- كتاب 7 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/تقنية معلومات.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">تقنية المعلومات</h3>
+                    <div class="mb-3"><button onclick="readBook('read-7', 'الكتب/تقنية معلومات.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-7" class="font-bold">727</span></span></div>
+                </div>
+
+                <!-- كتاب 8 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/جهاز الافوميتر.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">جهاز الأفوميتر</h3>
+                    <div class="mb-3"><button onclick="readBook('read-8', 'الكتب/جهاز الافوميتر.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-8" class="font-bold">833</span></span></div>
+                </div>
+
+                <!-- كتاب 9 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/اصلاح اعطال كمبيوتر.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">إصلاح أعطال الكمبيوتر</h3>
+                    <div class="mb-3"><button onclick="readBook('read-9', 'الكتب/اصلاح اعطال الكمبيوتر والابتوب.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-9" class="font-bold">254</span></span></div>
+                </div>
+
+                <!-- كتاب 10 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/تعلم الويندوز.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات الويندوز</h3>
+                    <div class="mb-3"><button onclick="readBook('read-10', 'الكتب/Windows  أساسيات.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-10" class="font-bold">75</span></span></div>
+                </div>
+
+                <!-- كتاب 11 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/انجليزي.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">قواعد اللغة الإنجليزية</h3>
+                    <div class="mb-3"><button onclick="readBook('read-11', 'الكتب/اساسيات الانجليزي.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-11" class="font-bold">230</span></span></div>
+                </div>
+
+                <!-- كتاب 12 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/العناصر الالكترونية.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">العناصر الإلكترونية</h3>
+                    <div class="mb-3"><button onclick="readBook('read-12', 'الكتب/كتاب اساسيات العناصر الإلكترونية.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-12" class="font-bold">140</span></span></div>
+                </div>
+
+                <!-- كتاب 13 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/هندسة كمبيوتر.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">هندسة كمبيوتر</h3>
+                    <div class="mb-3"><button onclick="readBook('read-13', 'الكتب/كتاب هندسة كمبيوتر.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-13" class="font-bold">165</span></span></div>
+                </div>
+
+                <!-- كتاب 14 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/أساسيات الامن الرقمي 1.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات الأمن الرقمي 1</h3>
+                    <div class="mb-3"><button onclick="readBook('read-14', 'الكتب/1 أساسيات الأمن الرقمي.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-14" class="font-bold">180</span></span></div>
+                </div>
+
+                <!-- كتاب 15 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/أساسيات الامن الرقمي 2.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات الأمن الرقمي 2</h3>
+                    <div class="mb-3"><button onclick="readBook('read-15', 'الكتب/أساسيات الأمن الرقمي2.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-15" class="font-bold">195</span></span></div>
+                </div>
+
+                <!-- كتاب 16 -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/أساسيات الخوارزميات.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات الخوارزميات</h3>
+                    <div class="mb-3"><button onclick="readBook('read-16', 'الكتب/أساسيات الخوارزميات.pdf')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div>
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-16" class="font-bold">215</span></span></div>
+                </div>
+
+                 <!-- كتاب 17  -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/أساسيات تحليل وتصميم النظم.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">تحليل وتصميم النظم</h3>
+                    <!-- <div class="mb-3"><button onclick="readBook('read-17', '#')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div> -->
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-17" class="font-bold">0</span></span></div>
+                </div> 
+
+
+
+
+                 <!-- كتاب 17  -->
+                <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+                    <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
+                        <img src="غلاف/طرق بحث.png" alt="غلاف الكتاب" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">  منهجيات البحث العلمي</h3>
+                    <!-- <div class="mb-3"><button onclick="readBook('read-17', '#')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> بدء القراءة</button></div> -->
+                    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="read-17" class="font-bold">0</span></span></div>
+                </div> 
+
+
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-950 py-8 border-t border-amber-100 dark:border-slate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm md:text-base">
+            <p class="font-medium text-amber-900 dark:text-amber-400">Safari Web - مكتبة مها شهوب</p>
+            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">جميع الحقوق محفوظة © 2026</p>
+        </div>
+    </footer>
+
+    <script>
+        function moveSlider(shelfId, direction) {
+            const container = document.getElementById(shelfId);
+            const scrollAmount = container.clientWidth * 0.75; 
+            if (direction === 'left') { 
+                container.scrollLeft -= scrollAmount; 
+            } else { 
+                container.scrollLeft += scrollAmount; 
+            }
+        }
+
+        function toggleDarkMode() {
+            const htmlElement = document.documentElement;
+            const toggleBtn = document.getElementById('theme-toggle');
+            
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+
+        function readBook(counterId, pdfUrl) {
+            const counterElement = document.getElementById(counterId);
+            if (!counterElement) return;
+
+            let currentCount = parseInt(counterElement.innerText);
+            let newCount = currentCount + 1;
+            
+            counterElement.innerText = newCount;
+            localStorage.setItem('safari_book_' + counterId, newCount);
+            
+            counterElement.parentElement.classList.add('text-emerald-600', 'scale-110');
+            setTimeout(() => {
+                counterElement.parentElement.classList.remove('text-emerald-600', 'scale-110');
+            }, 300);
+
+            if(pdfUrl && pdfUrl !== '#') {
+                window.open(pdfUrl, '_blank');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const toggleBtn = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+                toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                document.documentElement.classList.add('dark');
+                toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            const counters = ['read-1', 'read-2', 'read-3', 'read-4', 'read-5', 'read-6', 'read-7', 'read-8', 'read-9', 'read-10', 'read-11', 'read-12', 'read-13', 'read-14', 'read-15', 'read-16', 'read-17'];
+            counters.forEach(id => {
+                const counterElement = document.getElementById(id);
+                if (counterElement) {
+                    const storedCount = localStorage.getItem('safari_book_' + id);
+                    if (storedCount !== null) {
+                        counterElement.innerText = storedCount;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
