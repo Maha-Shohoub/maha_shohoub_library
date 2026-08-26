@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <!-- مكان النبذة -->
             <div class="mb-6 text-gray-700 dark:text-gray-300 text-sm leading-relaxed bg-amber-50/50 dark:bg-slate-900/50 p-4 rounded-xl border border-amber-100 dark:border-slate-700">
                 <p class="font-bold text-amber-900 dark:text-amber-400 mb-2">نبذة عن الكاتبة:</p>
-                <p id="author-bio-text"> المهندسة مها شهوب، باحثة ومطورة محتوى تقني ليبية، وصاحبة مشروع «آفاق المعرفة التقنية» ومنصة كتب أساسيات التقنية المجانية. تتمتع بخبرة واسعة ومسبقة في  البرمجة و قيادة الحاسب الآلي، وإصلاح أعطال الكمبيوتر، بالإضافة إلى خبرتها الكبيرة في مجال الإلكترونيات والشبكات. تسعى لتقديم محتوى تعليمي رقمي يسهم في تسهيل علوم البرمجة والتقنية بالغة عربية .</p>
+                <p id="author-bio-text"> المهندسة مها شهوب، باحثة ومطورة محتوى تقني ليبية، وصاحبة مشروع «آفاق المعرفة التقنية» ومنصة كتب أساسيات التقنية المجانية. تتمتع بخبرة واسعة ومسبقة في البرمجة و قيادة الحاسب الآلي، وإصلاح أعطال الكمبيوتر، بالإضافة إلى خبرتها الكبيرة في مجال الإلكترونيات والشبكات. تسعى لتقديم محتوى تعليمي رقمي يسهم في تسهيل علوم البرمجة والتقنية بالغة عربية .</p>
             </div>
 
             <!-- معلومات التواصل وروابط السوشيال ميديا -->
@@ -158,17 +158,14 @@ window.addEventListener('DOMContentLoaded', () => {
         <div id="shelf-1" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth py-4 px-2 items-stretch">
             
             <!-- كتاب 1 -->
-            
             <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
     <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
         <img src="غلاف/اساسيات برمجة.png" alt="غلاف كتاب أساسيات برمجة - سلسلة أساسيات التقنية - للمهندسة مها شهوب " class="w-full h-full object-contain">
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات برمجة</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب وقيمته الابتدائية والرابط -->
         <button onclick="trackRead('read-1', 350); window.open('https://drive.google.com/file/d/1BdJJvEnIwNgyfl2UyUwuWKHM7ixml7TQ/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا يتماشى تماماً مع دالة الـ JavaScript -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-1" class="font-bold">350</span></span></div>
 </div>
 
@@ -179,24 +176,20 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات شبكات</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-2' وقيمته الابتدائية 2000 والرابط -->
         <button onclick="trackRead('read-2', 2000); window.open('https://drive.google.com/file/d/1mDihMyP1H4SlcRRGdwewXL4Tt56_ff-s/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-2) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-2" class="font-bold">2,000</span></span></div>
 </div>
 
             <!-- كتاب 3 -->
-         <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+           <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
     <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
         <img src="غلاف/هياكل بيانات وخوارزمية.png" alt="غلاف كتاب هياكل البيانات - سلسلة أساسيات التقنية - للمهندسة مها شهوب" class="w-full h-full object-contain">
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">هياكل البيانات</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-3' وقيمته الابتدائية 500 والرابط -->
         <button onclick="trackRead('read-3', 500); window.open('https://drive.google.com/file/d/1T34pARCv4kEek0oacnTmufbGfeCxEZM6/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-3) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-3" class="font-bold">500</span></span></div>
 </div>
             <!-- كتاب 4 -->
@@ -206,10 +199,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">لغة HTML5</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-4' وقيمته الابتدائية 266 والرابط -->
         <button onclick="trackRead('read-4', 266); window.open('https://drive.google.com/file/d/10Jrgj0lQpkijZfHS1S3bf7dirzQ-a2Z4/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-4) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-4" class="font-bold">266</span></span></div>
 </div>
 
@@ -220,10 +211,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">مكونات الحاسب الآلي</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-5' وقيمته الابتدائية 319 والرابط -->
         <button onclick="trackRead('read-5', 319); window.open('https://drive.google.com/file/d/17WyIJ-baZkr3iRXTkrnvY4MjFHIcJB74/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-5) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-5" class="font-bold">319</span></span></div>
 </div>
 
@@ -234,15 +223,13 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">اختصارات الكمبيوتر</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-6' وقيمته الابتدائية 562 والرابط -->
         <button onclick="trackRead('read-6', 562); window.open('https://drive.google.com/file/d/1NvVhrrbVuBecsLFau1WZgsgMenfsENCP/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-6) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-6" class="font-bold">562</span></span></div>
 </div>
             
    
-     </div>
+      </div>
     </section>
 
 
@@ -266,24 +253,20 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">تقنية المعلومات</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-7' وقيمته الابتدائية 727 والرابط -->
         <button onclick="trackRead('read-7', 727); window.open('https://drive.google.com/file/d/15UtEJeGmPeNukNp9MJC5VVahvHgo43UK/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-7) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-7" class="font-bold">727</span></span></div>
 </div>
 
             <!-- كتاب 8 -->
-            <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+             <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
     <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
         <img src="غلاف/جهاز الافوميتر.png" alt=" غلاف كتاب جهاز الأفوميتر- سلسلة أساسيات التقنية - للمهندسة مها شهوب" class="w-full h-full object-contain">
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">جهاز الأفوميتر</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-8' وقيمته الابتدائية 833 والرابط -->
         <button onclick="trackRead('read-8', 833); window.open('https://drive.google.com/file/d/1TNMkLbd8_ilDw7y2pnZk9VNyn4itW9DS/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-8) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-8" class="font-bold">833</span></span></div>
 </div>
 
@@ -294,10 +277,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">إصلاح أعطال الكمبيوتر</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-9' وقيمته الابتدائية 254 والرابط -->
         <button onclick="trackRead('read-9', 254); window.open('https://drive.google.com/file/d/1SmQenER-VWy1FqfBV4V-dDrzc8bEdKUx/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-9) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-9" class="font-bold">254</span></span></div>
 </div>
 
@@ -308,10 +289,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات الويندوز</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-10' وقيمته الابتدائية 75 والرابط -->
         <button onclick="trackRead('read-10', 75); window.open('https://drive.google.com/file/d/10sFgLHYXwuCihkGrpL-V5mBO6Pa5W8GN/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-10) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-10" class="font-bold">75</span></span></div>
 </div>
 
@@ -322,10 +301,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">قواعد اللغة الإنجليزية</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-11' وقيمته الابتدائية 230 والرابط -->
         <button onclick="trackRead('read-11', 230); window.open('https://drive.google.com/file/d/1NqH18c1jmCfa7ExlhNkQ6ghLkpc08b8y/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً مع الدالة (counter-read-11) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-11" class="font-bold">230</span></span></div>
 </div>
 
@@ -336,10 +313,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">العناصر الإلكترونية</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-12' وقيمته الابتدائية 140 والرابط -->
         <button onclick="trackRead('read-12', 140); window.open('https://drive.google.com/file/d/1v2W4D8cqGiJPli5MxdJfhJ3QayZr9i6E/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً تماماً مع الدالة (counter-read-12) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-12" class="font-bold">140</span></span></div>
 </div>
         </div>
@@ -366,10 +341,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">هندسة كمبيوتر</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-13' وقيمته الابتدائية 165 والرابط -->
         <button onclick="trackRead('read-13', 165); window.open('https://drive.google.com/file/d/1CUlvPbsSBbaSOUDltx_V85siClUSwSsc/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً تماماً مع الدالة (counter-read-13) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-13" class="font-bold">165</span></span></div>
 </div>
 
@@ -380,10 +353,8 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1"> أساسيات الأمن الرقمي </h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-14' وقيمته الابتدائية 180 والرابط -->
         <button onclick="trackRead('read-14', 180); window.open('https://drive.google.com/file/d/1SfLEjFrmWU4xI31rVnHHBmVYiIhUeLWX/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً تماماً مع الدالة (counter-read-14) -->
     <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-14" class="font-bold">180</span></span></div>
 </div>
 
@@ -394,24 +365,21 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">أساسيات الخوارزميات</h3>
     <div class="mb-3">
-        <!-- تم ربط الدالة هنا مع معرف الكتاب 'read-16' وقيمته الابتدائية 215 والرابط -->
-        <button onclick="trackRead('read-16', 215); window.open('https://drive.google.com/file/d/1VXoDP8ubi9C81dyZtSuNdRJM6upBXIW1/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
+        <button onclick="trackRead('read-15', 215); window.open('https://drive.google.com/file/d/1VXoDP8ubi9C81dyZtSuNdRJM6upBXIW1/view?usp=drive_link', '_blank');" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm flex items-center justify-center gap-2 shadow"><i class="fas fa-eye"></i> قراءة و تنزيل</button>
     </div>
-    <!-- الـ ID هنا أصبح متوافقاً تماماً مع الدالة (counter-read-16) -->
-    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-16" class="font-bold">215</span></span></div>
+    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-15" class="font-bold">215</span></span></div>
 </div>
 
             <!-- كتاب 16 -->
-            <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
+             <div class="book-card min-w-[240px] max-w-[260px] bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-amber-100 dark:border-slate-700 flex flex-col justify-between p-4 shadow-md text-center">
     <div class="h-64 bg-gray-50 dark:bg-slate-900 border border-amber-100 dark:border-slate-700 rounded-lg overflow-hidden relative mb-3 flex items-center justify-center">
         <img src="غلاف/أساسيات تحليل وتصميم النظم.png" alt="غلاف كتاب تحليل وتصميم النظم - سلسلة أساسيات التقنية - للمهندسة مها شهوب" class="w-full h-full object-contain">
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">تحليل وتصميم النظم</h3>
     <div class="mb-3">
-        <!-- زر معطل للحالة "قريباً" مع الحفاظ على التنسيق الموحد -->
         <button disabled class="w-full bg-amber-600/60 text-white font-medium py-2 px-4 rounded-lg text-sm flex items-center justify-center gap-2 shadow cursor-not-allowed"><i class="fas fa-clock"></i> قريباً</button>
     </div>
-    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-17" class="font-bold">0</span></span></div>
+    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-16" class="font-bold">0</span></span></div>
 </div> 
 
             <!-- كتاب 17 -->
@@ -421,10 +389,9 @@ window.addEventListener('DOMContentLoaded', () => {
     </div>
     <h3 class="text-base font-bold text-amber-950 dark:text-amber-100 mb-2 line-clamp-1">منهجيات البحث العلمي</h3>
     <div class="mb-3">
-        <!-- زر معطل للحالة "قريباً" مع الحفاظ على التنسيق الموحد -->
         <button disabled class="w-full bg-amber-600/60 text-white font-medium py-2 px-4 rounded-lg text-sm flex items-center justify-center gap-2 shadow cursor-not-allowed"><i class="fas fa-clock"></i> قريباً</button>
     </div>
-    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-18" class="font-bold">0</span></span></div>
+    <div class="flex justify-center items-center text-xs text-gray-500 dark:text-gray-400 border-t dark:border-slate-700 pt-2 px-1"><span>👁️ عدد القراءات: <span id="counter-read-17" class="font-bold">0</span></span></div>
 </div> 
         </div>
     </section>
@@ -459,7 +426,6 @@ window.addEventListener('DOMContentLoaded', () => {
             if (htmlElement.classList.contains('dark')) {
                 htmlElement.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
-                toggleBtn.innerHTML = '<i class="fas faot-moon"></i>';
                 toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
             } else {
                 htmlElement.classList.add('dark');
