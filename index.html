@@ -23,28 +23,41 @@
         tailwind.config = {
             darkMode: 'class',
         }
-
-        // دالة موحدة لجميع العدادات تعمل عند النقر على كتاب معين
-function trackRead(bookId, defaultCount) {
-    // محاولة جلب العداد الحالي من التخزين المحلي أو الخادم
-    let views = localStorage.getItem(bookId);
+function trackRead(bookId, initialCount) {
+    // تحديد مفتاح التخزين الفريد لكل كتاب في الذاكرة المحلية
+    const storageKey = 'counter_' + bookId;
     
-    if (!views) {
-        views = defaultCount; // القيمة الابتدائية الموجودة مسبقاً
+    // التحقق مما إذا كان هناك قيمة مخزنة مسبقاً، وإلا نبدأ بالقيم الافتراضية
+    let currentCount = localStorage.getItem(storageKey);
+    if (currentCount === null) {
+        currentCount = initialCount;
+    } else {
+        currentCount = parseInt(currentCount) + 1;
     }
     
-    // زيادة الرقم بواقع 1 عند النقر
-    views = parseInt(views) + 1;
+    // حفظ القيمة الجديدة في الذاكرة المحلية للمتصفح
+    localStorage.setItem(storageKey, currentCount);
     
-    // حفظ الرقم الجديد
-    localStorage.setItem(bookId, views);
-    
-    // تحديث العنصر البصري في الصفحة مباشرة
-    let counterElement = document.getElementById('counter-' + bookId);
+    // تحديث العنصر في الصفحة بشكل فوري
+    const counterElement = document.getElementById('counter-' + bookId);
     if (counterElement) {
-        counterElement.innerText = views;
+        counterElement.innerText = currentCount;
     }
 }
+
+// دالة لتعبئة القيم المخزنة تلقائياً بمجرد فتح الصفحة أو عمل Refresh
+window.addEventListener('DOMContentLoaded', () => {
+    // ابحث عن كل العدادات وحدثها من الـ localStorage إن وجدت
+    const counters = document.querySelectorAll('[id^="counter-read-"]');
+    counters.forEach(counter => {
+        const bookId = counter.id.replace('counter-', '');
+        const storageKey = 'counter_' + bookId;
+        const savedCount = localStorage.getItem(storageKey);
+        if (savedCount !== null) {
+            counter.innerText = savedCount;
+        }
+    });
+});
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
